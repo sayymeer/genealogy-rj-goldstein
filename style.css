@@ -7,6 +7,12 @@ body {
     overflow-x: hidden;
 }
 
+foreignObject:hover{
+    stroke: #daa520;
+    background-color: #daa520;
+    transition: 0.2s;
+}
+
 h4{
     text-transform:uppercase;
 }

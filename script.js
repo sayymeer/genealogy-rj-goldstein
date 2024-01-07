@@ -60,10 +60,10 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .attr("x", x)
     .attr("y", y)
     .attr("width", rectwidth)
-    .attr("height", rectheight);
+    .attr("height", rectheight)
 
   // Add a div inside foreignObject for wrapped text
-  const div = foreignObject.append("xhtml:div")
+  const div = foreignObject.append("xhtml:section")
     .style("width", rectwidth)
     .style("height", rectheight)
     .style("overflow", "hidden")
@@ -108,3 +108,10 @@ svg.append("defs").append("marker")
   .attr("orient", "auto-start-reverse")
   .append("path").attr("fill",linecolor)
   .attr("d", "M 0 0 L 10 5 L 0 10 z");
+
+
+// function zoomed(event) {
+//     svg.attr("transform", event.transform);
+//   }
+// const zoom = d3.zoom().scaleExtent([0.1,100]).on("zoom",zoomed)
+// svg.call(zoom)
