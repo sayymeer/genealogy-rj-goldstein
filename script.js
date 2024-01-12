@@ -7,8 +7,8 @@ const dx = 0.28
 const dy = 0.24
 const shiftx = width*0.5
 const shifty = height*0.5
-const rectwidth = 300
-const rectheight = 75
+const rectwidth = 350
+const rectheight = 100
 const linecolor = "maroon"
 const linewidth = 1.5
 const rectradius = 8
@@ -37,7 +37,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .style("height", rectheight*2.5)
     .style("overflow", "hidden")
     .style("text-align", "center")
-    .style("font-size", "16px")
+    .style("font-size", "14px")
     .style("padding","2px")
 
 
