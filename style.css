@@ -10,7 +10,7 @@ body {
 foreignObject:hover{
     stroke: #daa520;
     background-color: #daa520;
-    transition: 0.2s;
+    transition: 0.4s;
 }
 
 h4{

@@ -7,7 +7,7 @@ const dx = 0.4
 const dy = 0.4
 const shiftx = width*0.5
 const shifty = height*1
-const rectwidth = 350
+const rectwidth = 400
 const rectheight = 100
 const linecolor = "maroon"
 const linewidth = 1.5
@@ -37,7 +37,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .style("height", rectheight*2.5)
     .style("overflow", "hidden")
     .style("text-align", "center")
-    .style("font-size", "14px")
+    .style("font-size", "16px")
     .style("padding","2px")
 
 
@@ -68,12 +68,12 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .style("height", rectheight)
     .style("overflow", "hidden")
     .style("text-align", "center")
-    .style("font-size", "14px")
+    .style("font-size", "13px")
     .style("padding","2px")
 
 
   // Add the wrapped text
-  div.html(`<h4 style="margin-bottom:0px; color: #800000;font-weight: bolder">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000;">${body}</p>`);
+  div.html(`<h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
   return
 }
 
