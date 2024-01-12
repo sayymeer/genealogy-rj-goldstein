@@ -42,7 +42,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
 
 
   // Add the wrapped text
-  div.html(`<h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Carl Von Linde</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">(1902) Prof. Applied Thermodynamics </p> <hr><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder">Oscar Knoblauch</h4><p style="margin-top:0px;font-style: italic;color: #800000;">Inst. Tech. Physics (1902) <br> - W Nusselt (1907)<br> - Ernst Schmidt (1925)</p>`);
+  div.html(`<h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Carl Von Linde</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">(1902) Prof. Applied Thermodynamics </p> <hr><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Oscar Knoblauch</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">Inst. Tech. Physics (1902) <br> - W Nusselt (1907)<br> - Ernst Schmidt (1925)</p>`);
   return
   }
   
