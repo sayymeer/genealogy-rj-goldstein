@@ -3,10 +3,10 @@ const position = await d3.json("position.json");
 
 const width = window.innerWidth;
 const height = window.innerHeight;
-const dx = 0.28
-const dy = 0.24
+const dx = 0.4
+const dy = 0.4
 const shiftx = width*0.5
-const shifty = height*0.5
+const shifty = height*1
 const rectwidth = 350
 const rectheight = 100
 const linecolor = "maroon"
@@ -82,7 +82,7 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const svg = d3.select("#container").append("svg").attr("width", width*6).attr("height", height*6);
+const svg = d3.select("#container").append("svg").attr("width", width*8).attr("height", height*8);
 
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
