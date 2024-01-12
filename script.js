@@ -88,15 +88,55 @@ position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
 });
 
-const links = svg.selectAll("line")
+
+// First set of lines (links1)
+// First set of curved lines (links1)
+const links1 = svg.selectAll(".links1")
+  .data(data)
+  .enter().append("path")
+  .attr("class", "links1")
+  .attr("d", d => {
+    const sourceCoords = getCoordinate(d.source);
+    const targetCoords = getCoordinate(d.source); // Assuming the target is the same as the source for links1
+
+    const startX = sourceCoords.x * width * dx + shiftx + rectwidth / 2;
+    const startY = sourceCoords.y * height * dy + shifty + rectheight;
+    const endX = startX;
+    const endY = startY + 20;
+    const controlX = (startX + endX) / 2;
+    const controlY = startY + 10;
+
+    return `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`;
+  })
+  .attr("stroke", linecolor)
+  .attr("stroke-width", linewidth);
+
+
+// Second set of lines (links2)
+const links2 = svg.selectAll(".links2")
   .data(data)
   .enter().append("line")
-  .attr("x1", d => getCoordinate(d.source).x * width * dx + shiftx + rectwidth/2 )
-  .attr("y1", d => getCoordinate(d.source).y * height * dy + shifty + rectheight)
-  .attr("x2", d => getCoordinate(d.target).x * width * dx + shiftx + rectwidth/2)
+  .attr("class", "links2")
+  .attr("x1", d => getCoordinate(d.source).x * width * dx + shiftx + rectwidth / 2)
+  .attr("y1", d => getCoordinate(d.source).y * height * dy + shifty + rectheight + 20)
+  .attr("x2", d => getCoordinate(d.target).x * width * dx + shiftx + rectwidth / 2)
+  .attr("y2", d => getCoordinate(d.source).y * height * dy + shifty + rectheight + 20)
+  .attr("stroke", linecolor)
+  .attr("stroke-width", linewidth);
+
+// Third set of lines (links)
+const links = svg.selectAll(".links")
+  .data(data)
+  .enter().append("line")
+  .attr("class", "links")
+  .attr("x1", d => getCoordinate(d.target).x * width * dx + shiftx + rectwidth / 2)
+  .attr("y1", d => getCoordinate(d.source).y * height * dy + shifty + rectheight + 20)
+  .attr("x2", d => getCoordinate(d.target).x * width * dx + shiftx + rectwidth / 2)
   .attr("y2", d => getCoordinate(d.target).y * height * dy + shifty)
-  .attr("stroke", linecolor).attr("stroke-width",linewidth)
+  .attr("stroke", linecolor)
+  .attr("stroke-width", linewidth)
   .attr("marker-end", "url(#arrow)");
+
 
 svg.append("defs").append("marker")
   .attr("id", "arrow")
