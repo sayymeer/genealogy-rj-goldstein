@@ -5,8 +5,8 @@ body {
 }
 
 #container{
-    width: 3200px;
-    height: 3800px;
+    /* width: 3200px; */
+    /* height: 3800px; */
 }
 
 foreignObject:hover{
