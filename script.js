@@ -1,8 +1,8 @@
 const data = await d3.csv("data.csv");
 const position = await d3.json("position.json");
 
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = 1536;
+const height =695;
 const dx = 0.4
 const dy = 0.4
 const shiftx = width*0.5
@@ -18,6 +18,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     svg.append("rect")
     .attr("x", x).attr("rx",rectradius)
     .attr("y", y).attr("ry",rectradius)
+    .classed(text,true)
     .attr("width", rectwidth)
     .attr("height", rectheight*2.5)
     .attr("fill", "none")
@@ -48,7 +49,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
   
   svg.append("rect")
     .attr("x", x).attr("rx",rectradius)
-    .attr("y", y).attr("ry",rectradius)
+    .attr("y", y).attr("ry",rectradius).classed(text,true)
     .attr("width", rectwidth)
     .attr("height", rectheight)
     .attr("fill", "none")
@@ -82,7 +83,7 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const svg = d3.select("#container").append("svg").attr("width", width*8).attr("height", height*8);
+const svg = d3.select("#container").append("svg").attr("width", 3200).attr("height", 3800);
 
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
@@ -97,7 +98,7 @@ const links1 = svg.selectAll(".links1")
   .attr("class", "links1")
   .attr("d", d => {
     const sourceCoords = getCoordinate(d.source);
-    const targetCoords = getCoordinate(d.source); // Assuming the target is the same as the source for links1
+    const targetCoords = getCoordinate(d.target); // Assuming the target is the same as the source for links1
 
     const startX = sourceCoords.x * width * dx + shiftx + rectwidth / 2;
     const startY = sourceCoords.y * height * dy + shifty + rectheight;
@@ -148,10 +149,3 @@ svg.append("defs").append("marker")
   .attr("orient", "auto-start-reverse")
   .append("path").attr("fill",linecolor)
   .attr("d", "M 0 0 L 10 5 L 0 10 z");
-
-
-// function zoomed(event) {
-//     svg.attr("transform", event.transform);
-//   }
-// const zoom = d3.zoom().scaleExtent([0.1,100]).on("zoom",zoomed)
-// svg.call(zoom)
