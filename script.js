@@ -160,7 +160,7 @@ svg.append("defs").append("marker")
 
   const zoom = d3.zoom()
   .scaleExtent([0.5, 2]) // Set the zoom scale limits (adjust as needed)
-  .on("zoom", zoomed);
+  .on("zoom",zoomed );
 
 svg.call(zoom);
 

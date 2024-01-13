@@ -2,15 +2,11 @@ body {
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
-    overflow: none;
-    overflow-x: hidden;
 }
 
 #container{
-    width: 120vw;
-    overflow: auto;
+    width: 3200px;
+    height: 3800px;
 }
 
 foreignObject:hover{
@@ -27,7 +23,7 @@ h4{
 header
 {
     text-transform: uppercase;
-    position:sticky;
+    position:fixed;
     top: 0;
     left: 0;
     background-color:#daa520;
