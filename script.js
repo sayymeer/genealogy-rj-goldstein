@@ -30,10 +30,10 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .attr("x", x)
     .attr("y", y)
     .attr("width", rectwidth)
-    .attr("height", rectheight*2.5);
+    .attr("height", rectheight*2.5).attr("class",text)
 
   // Add a div inside foreignObject for wrapped text
-  const div = foreignObject.append("xhtml:div")
+  const div = foreignObject.append("xhtml:section")
     .style("width", rectwidth)
     .style("height", rectheight*2.5)
     .style("overflow", "hidden")
@@ -92,6 +92,9 @@ position.forEach(element => {
 
 // First set of lines (links1)
 // First set of curved lines (links1)
+
+
+
 const links1 = svg.selectAll(".links1")
   .data(data)
   .enter().append("path")
@@ -102,7 +105,7 @@ const links1 = svg.selectAll(".links1")
 
     const startX = sourceCoords.x * width * dx + shiftx + rectwidth / 2;
     const startY = sourceCoords.y * height * dy + shifty + rectheight;
-    const endX = startX;
+    const endX = startX
     const endY = startY + 20;
     const controlX = (startX + endX) / 2;
     const controlY = startY + 10;

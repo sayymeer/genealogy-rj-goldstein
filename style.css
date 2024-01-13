@@ -9,7 +9,7 @@ body {
 }
 
 #container{
-    /* width: 100vw; */
+    width: 120vw;
     overflow: auto;
 }
 
@@ -17,6 +17,7 @@ foreignObject:hover{
     stroke: #daa520;
     background-color: #daa520;
     transition: 0.4s;
+    z-index: -1999;
 }
 
 h4{
