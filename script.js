@@ -95,7 +95,10 @@ position.forEach(element => {
 // First set of lines (links1)
 // First set of curved lines (links1)
 
-
+const lineGenerator = d3.line()
+    .x(d => d[0])
+    .y(d => d[1])
+    .curve(d3.curveBasis); 
 
 const links1 = svg.selectAll(".links1")
   .data(data)
@@ -103,19 +106,18 @@ const links1 = svg.selectAll(".links1")
   .attr("class", "links1")
   .attr("d", d => {
     const sourceCoords = getCoordinate(d.source);
-    const targetCoords = getCoordinate(d.target); // Assuming the target is the same as the source for links1
-
+    const targetX = getCoordinate(d.target).x * width * dx + shiftx + rectwidth / 2
     const startX = sourceCoords.x * width * dx + shiftx + rectwidth / 2;
     const startY = sourceCoords.y * height * dy + shifty + rectheight;
-    const endX = startX
+    let endX = startX
+    let controlX  = startX
     const endY = startY + 20;
-    const controlX = (startX + endX) / 2;
+    
     const controlY = startY + 10;
-
-    return `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`;
+    return lineGenerator([[startX,startY],[controlX,controlY],[endX,endY]])
   })
   .attr("stroke", linecolor)
-  .attr("stroke-width", linewidth);
+  .attr("stroke-width", linewidth).attr("fill","none");
 
 
 // Second set of lines (links2)
@@ -154,3 +156,17 @@ svg.append("defs").append("marker")
   .attr("orient", "auto-start-reverse")
   .append("path").attr("fill",linecolor)
   .attr("d", "M 0 0 L 10 5 L 0 10 z");
+
+
+  const zoom = d3.zoom()
+  .scaleExtent([0.5, 2]) // Set the zoom scale limits (adjust as needed)
+  .on("zoom", zoomed);
+
+svg.call(zoom);
+
+function zoomed(event) {
+  const transform = event.transform;
+
+  // Apply the transformation to all elements
+  svg.attr("transform", transform);
+}
