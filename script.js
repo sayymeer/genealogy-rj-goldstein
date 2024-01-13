@@ -15,6 +15,12 @@ const rectradius = 8
 
 function createRectWithWrappedText(svg, x, y, text,body,flag) {
   if(flag == 1){
+
+    const foreignObject = svg.append("foreignObject")
+    .attr("x", x)
+    .attr("y", y)
+    .attr("width", rectwidth)
+    .attr("height", rectheight*2.5).attr("class",text)
     svg.append("rect")
     .attr("x", x).attr("rx",rectradius)
     .attr("y", y).attr("ry",rectradius)
@@ -23,14 +29,9 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .attr("height", rectheight*2.5)
     .attr("fill", "none")
     .attr("stroke", "maroon")
-    .attr("stroke-width", 3);
+    .attr("stroke-width", 3.5);
 
   // Create a foreignObject to embed HTML content (for wrapped text)
-  const foreignObject = svg.append("foreignObject")
-    .attr("x", x)
-    .attr("y", y)
-    .attr("width", rectwidth)
-    .attr("height", rectheight*2.5).attr("class",text)
 
   // Add a div inside foreignObject for wrapped text
   const div = foreignObject.append("xhtml:section")
@@ -46,6 +47,12 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
   div.html(`<h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Carl Von Linde</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">(1902) Prof. Applied Thermodynamics </p> <hr><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Oscar Knoblauch</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">Inst. Tech. Physics (1902) <br> - W Nusselt (1907)<br> - Ernst Schmidt (1925)</p>`);
   return
   }
+
+  const foreignObject = svg.append("foreignObject")
+    .attr("x", x)
+    .attr("y", y)
+    .attr("width", rectwidth)
+    .attr("height", rectheight)
   
   svg.append("rect")
     .attr("x", x).attr("rx",rectradius)
@@ -54,14 +61,9 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .attr("height", rectheight)
     .attr("fill", "none")
     .attr("stroke", "maroon")
-    .attr("stroke-width", 3);
+    .attr("stroke-width", 3.5);
 
   // Create a foreignObject to embed HTML content (for wrapped text)
-  const foreignObject = svg.append("foreignObject")
-    .attr("x", x)
-    .attr("y", y)
-    .attr("width", rectwidth)
-    .attr("height", rectheight)
 
   // Add a div inside foreignObject for wrapped text
   const div = foreignObject.append("xhtml:section")
