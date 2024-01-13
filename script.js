@@ -159,7 +159,7 @@ svg.append("defs").append("marker")
 
 
   const zoom = d3.zoom()
-  .scaleExtent([0.5, 2]) // Set the zoom scale limits (adjust as needed)
+  .scaleExtent([0.6, 1.4]) // Set the zoom scale limits (adjust as needed)
   .on("zoom",zoomed );
 
 svg.call(zoom);
@@ -169,4 +169,8 @@ function zoomed(event) {
 
   // Apply the transformation to all elements
   svg.attr("transform", transform);
+  document.querySelector("svg").scrollIntoView()
 }
+
+
+// zoom.scaleTo(svg,0.2)
