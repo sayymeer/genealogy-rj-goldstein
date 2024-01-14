@@ -12,7 +12,7 @@
     {"name":"Leonhard Euler","x":0.5,"y":2.8,"body":"Universität Basel (1726)","flag":4},
     {"name":"Joseph Louis Lagrange","x":0.5,"y":3.6,"body":"Università di Torino (1754)","flag":5},
     {"name":"Jean-Baptiste Joseph Fourier","x":0.5,"y":4.4,"body":"École Normale Supérieure","flag":6},
-    {"name":"Rudolf Otto Sigismund Lipschitz","x":0.85,"y":6.4,"body":"Universität Berlin (1853)"},
+    {"name":"Rudolf Otto Sigismund Lipschitz","x":0.475,"y":6.4,"body":"Universität Berlin (1853)"},
     {"name":"Oscar Carl Wilhelm Hermann Knoblauch","x":0.2,"y":7.8,"body":"Rheinische Friedrich-Wilhelms-Universität Bonn (1887)"},
     {"name":"Ernst R.G. Eckert","x":0.2,"y":8.4,"body":"Institute of Technology, Danzing (1938)"},
     {"name":"R.J. Goldstein","x":0.2,"y":9,"body":"University of Minnesota (1959)"},
