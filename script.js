@@ -1,12 +1,12 @@
 const data = await d3.csv("data.csv");
 const position = await d3.json("position.json");
 
-const width = 1536;
+const width = 1600;
 const height =695;
 const dx = 0.4
 const dy = 0.4
-const shiftx = width*0.5
-const shifty = height*1
+const shiftx = width*0.6
+const shifty = height*1.4
 const rectwidth = 400
 const rectheight = 100
 const linecolor = "maroon"
@@ -14,19 +14,18 @@ const linewidth = 1.5
 const rectradius = 8
 
 function createRectWithWrappedText(svg, x, y, text,body,flag) {
-  if(flag == 1){
-
+  if(flag && flag!=1){
     const foreignObject = svg.append("foreignObject")
     .attr("x", x)
     .attr("y", y)
     .attr("width", rectwidth)
-    .attr("height", rectheight*2.5).attr("class",text)
-    svg.append("rect")
+    .attr("height", rectheight)
+  
+  svg.append("rect")
     .attr("x", x).attr("rx",rectradius)
-    .attr("y", y).attr("ry",rectradius)
-    .classed(text,true)
+    .attr("y", y).attr("ry",rectradius).classed(text,true)
     .attr("width", rectwidth)
-    .attr("height", rectheight*2.5)
+    .attr("height", rectheight)
     .attr("fill", "none")
     .attr("stroke", "maroon")
     .attr("stroke-width", 3.5);
@@ -36,18 +35,49 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
   // Add a div inside foreignObject for wrapped text
   const div = foreignObject.append("xhtml:section")
     .style("width", rectwidth)
-    .style("height", rectheight*2.5)
+    .style("height", rectheight)
     .style("overflow", "hidden")
     .style("text-align", "center")
-    .style("font-size", "16px")
+    .style("font-size", "13px")
     .style("padding","2px")
 
 
   // Add the wrapped text
-  div.html(`<h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Carl Von Linde</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">(1902) Prof. Applied Thermodynamics </p> <hr><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">Oscar Knoblauch</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 14px">Inst. Tech. Physics (1902) <br> - W Nusselt (1907)<br> - Ernst Schmidt (1925)</p>`);
+  div.html(`<img src="./assets/${flag}.jpg" width="80" height:"${rectheight}" style="float:left;margin:3px;"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
   return
   }
+  if(flag == 1){
+    const foreignObject = svg.append("foreignObject")
+    .attr("x", x)
+    .attr("y", y-rectheight)
+    .attr("width", rectwidth)
+    .attr("height", rectheight*2)
+  
+  svg.append("rect")
+    .attr("x", x).attr("rx",rectradius)
+    .attr("y", y-rectheight).attr("ry",rectradius).classed(text,true)
+    .attr("width", rectwidth)
+    .attr("height", rectheight*2)
+    .attr("fill", "none")
+    .attr("stroke", "maroon")
+    .attr("stroke-width", 3.5);
 
+  // Create a foreignObject to embed HTML content (for wrapped text)
+
+  // Add a div inside foreignObject for wrapped text
+  const div = foreignObject.append("xhtml:section")
+    .style("width", rectwidth)
+    .style("height", rectheight*2)
+    .style("overflow", "hidden")
+    .style("text-align", "center")
+    .style("font-size", "13px")
+    .style("padding","2px")
+
+
+  // Add the wrapped text
+  div.html(`<img style="margin-top:3px;margin-bottom:-3px" width="100" src="./assets/1.jpg"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
+  return
+  }
   const foreignObject = svg.append("foreignObject")
     .attr("x", x)
     .attr("y", y)
@@ -85,7 +115,7 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const svg = d3.select("#container").append("svg").attr("width", 3200).attr("height", 3800);
+const svg = d3.select("#container").append("svg").attr("width", 3200).attr("height", 4000);
 
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
@@ -159,7 +189,7 @@ svg.append("defs").append("marker")
 
 
   const zoom = d3.zoom()
-  .scaleExtent([0.6, 1.4]) // Set the zoom scale limits (adjust as needed)
+  .scaleExtent([0.6, 1]) // Set the zoom scale limits (adjust as needed)
   .on("zoom",zoomed );
 
 svg.call(zoom);

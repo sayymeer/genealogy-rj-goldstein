@@ -9,6 +9,10 @@ body {
     /* height: 3800px; */
 }
 
+img{
+    border-radius: 5px;
+}
+
 foreignObject:hover{
     stroke: #daa520;
     background-color: #daa520;
