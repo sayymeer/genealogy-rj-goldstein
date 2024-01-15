@@ -188,6 +188,16 @@ svg.append("defs").append("marker")
   .attr("d", "M 0 0 L 10 5 L 0 10 z");
 
 
+svg.append("line")
+.attr("x1",getCoordinate("Peter Werenfels").x * width * dx + shiftx + rectwidth / 2 - 10)
+.attr("y1",getCoordinate("Peter Werenfels").y * height * dy + shifty + rectheight)
+.attr("x2",getCoordinate("Jacob Bernoulli").x * width * dx + shiftx + rectwidth / 2 - 10)
+.attr("y2",getCoordinate("Jacob Bernoulli").y * height * dy + shifty)
+.attr("stroke", linecolor)
+  .attr("stroke-width", linewidth)
+  .attr("marker-end", "url(#arrow)");
+
+
   const zoom = d3.zoom()
   .scaleExtent([0.6, 1]) // Set the zoom scale limits (adjust as needed)
   .on("zoom",zoomed );
