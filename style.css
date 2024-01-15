@@ -13,6 +13,10 @@ img{
     border-radius: 5px;
 }
 
+foreignObject:has(.Nicolaus17), foreignObject:has(.R16){
+    background-color : #daa520;
+}
+
 foreignObject:hover{
     stroke: #daa520;
     background-color: #daa520;

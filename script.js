@@ -13,6 +13,8 @@ const linecolor = "maroon"
 const linewidth = 1.5
 const rectradius = 8
 
+let counter = 0;
+
 function createRectWithWrappedText(svg, x, y, text,body,flag) {
   if(flag && flag!=1){
     const foreignObject = svg.append("foreignObject")
@@ -39,7 +41,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .style("overflow", "hidden")
     .style("text-align", "center")
     .style("font-size", "13px")
-    .style("padding","2px")
+    .style("padding","2px").attr("class", text.split(" ")[0].split(".")[0] + counter++);
 
 
   // Add the wrapped text
@@ -71,7 +73,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .style("overflow", "hidden")
     .style("text-align", "center")
     .style("font-size", "13px")
-    .style("padding","2px")
+    .style("padding","2px").attr("class", text.split(" ")[0].split(".")[0] + counter++);
 
 
   // Add the wrapped text
@@ -102,7 +104,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
     .style("overflow", "hidden")
     .style("text-align", "center")
     .style("font-size", "13px")
-    .style("padding","2px")
+    .style("padding","2px").attr("class",text.split(" ")[0].split(".")[0] +  counter++);
 
 
   // Add the wrapped text
