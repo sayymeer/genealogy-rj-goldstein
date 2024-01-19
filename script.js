@@ -16,6 +16,38 @@ const rectradius = 8
 let counter = 0;
 
 function createRectWithWrappedText(svg, x, y, text,body,flag) {
+  if(flag == 9){
+    const foreignObject = svg.append("foreignObject")
+    .attr("x", x)
+    .attr("y", y)
+    .attr("width", rectwidth)
+    .attr("height", rectheight*1.8)
+  
+  svg.append("rect")
+    .attr("x", x).attr("rx",rectradius)
+    .attr("y", y).attr("ry",rectradius).classed(text,true)
+    .attr("width", rectwidth)
+    .attr("height", rectheight*1.8)
+    .attr("fill", "none")
+    .attr("stroke", "maroon")
+    .attr("stroke-width", 3.5);
+
+  // Create a foreignObject to embed HTML content (for wrapped text)
+
+  // Add a div inside foreignObject for wrapped text
+  const div = foreignObject.append("xhtml:section")
+    .style("width", rectwidth)
+    .style("height", rectheight*1.8)
+    .style("overflow", "hidden")
+    .style("text-align", "center")
+    .style("font-size", "13px")
+    .style("padding","2px").attr("class", text.split(" ")[0].split(".")[0] + counter++);
+
+
+  // Add the wrapped text
+  div.html(`<img style="margin-top:3px;margin-bottom:-3px;height:100px !important;" width="100" src="./assets/9.jpg"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
+  return
+  }
   if(flag && flag!=1){
     const foreignObject = svg.append("foreignObject")
     .attr("x", x)
@@ -77,7 +109,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
 
 
   // Add the wrapped text
-  div.html(`<img style="margin-top:3px;margin-bottom:-3px" width="100" src="./assets/1.jpg"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
+  div.html(`<img style="margin-top:3px;margin-bottom:-3px;height:100px !important;" width="100" height="100" src="./assets/1.jpg"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
   return
   }
   const foreignObject = svg.append("foreignObject")
@@ -117,7 +149,7 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const mysvg = d3.select("body").append("svg").attr("width", 2400).attr("height", 3700);
+const mysvg = d3.select("body").append("svg").attr("width", 2400).attr("height", 3750);
 const svg = mysvg.append("g")
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
