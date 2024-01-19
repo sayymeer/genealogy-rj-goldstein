@@ -11,6 +11,8 @@ body {
 
 img{
     border-radius: 5px;
+    box-sizing: border-box;
+    height: 90px;
 }
 
 foreignObject:has(.Nicolaus17), foreignObject:has(.R16){
