@@ -3,12 +3,6 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     box-sizing: border-box;
 }
-
-#container{
-    /* width: 3200px; */
-    /* height: 3800px; */
-}
-
 img{
     border-radius: 5px;
     box-sizing: border-box;
@@ -83,6 +77,10 @@ header
 {
     transform: scaleX(1);
 }
+
+/* svg{
+    background-color: aqua;
+} */
 
 
 /* ::-webkit-scrollbar {

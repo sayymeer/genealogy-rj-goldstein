@@ -6,7 +6,7 @@ const height =695;
 const dx = 0.4
 const dy = 0.4
 const shiftx = width*0.6
-const shifty = height*1.4
+const shifty = height*1.2
 const rectwidth = 400
 const rectheight = 100
 const linecolor = "maroon"
@@ -117,8 +117,8 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const svg = d3.select("#container").append("svg").attr("width", 3200).attr("height", 4000);
-
+const mysvg = d3.select("body").append("svg").attr("width", 2400).attr("height", 3600);
+const svg = mysvg.append("g")
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
 });
@@ -200,19 +200,33 @@ svg.append("line")
   .attr("marker-end", "url(#arrow)");
 
 
-  const zoom = d3.zoom()
-  .scaleExtent([0.6, 1]) // Set the zoom scale limits (adjust as needed)
-  .on("zoom",zoomed );
+//   const zoom = d3.zoom()
+//   .scaleExtent([0.6, 1]) 
+//   .extent([[0,0],[2400,3600]])// Set the zoom scale limits (adjust as needed)
+//   .on("zoom",zoomed );
+
+// svg.call(zoom);
+
+// function zoomed(event) {
+//   const transform = event.transform;
+//   // Apply the transformation to all elements
+//   svg.attr("transform", transform);
+
+//   // document.querySelector("svg").scrollIntoView()
+// }
+
+
+const zoom = d3.zoom()
+  .scaleExtent([0.5, 1])
+  .on("zoom", zoomed);
 
 svg.call(zoom);
 
+// Set initial zoom transformation
+// const initialTransform = d3.zoomIdentity.translate(shiftx, shifty).scale(0.8);
+// svg.call(zoom).call(zoom.transform, initialTransform);
+
 function zoomed(event) {
   const transform = event.transform;
-
-  // Apply the transformation to all elements
   svg.attr("transform", transform);
-  document.querySelector("svg").scrollIntoView()
 }
-
-
-// zoom.scaleTo(svg,0.2)
