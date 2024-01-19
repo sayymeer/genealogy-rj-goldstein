@@ -232,9 +232,9 @@ svg.append("line")
   .attr("marker-end", "url(#arrow)");
 
   svg.append("line")
-  .attr("x1",getCoordinate("Pierre-Simon Laplace").x * width * dx + shiftx + rectwidth / 2 - 10)
+  .attr("x1",getCoordinate("Pierre-Simon Laplace").x * width * dx + shiftx + rectwidth / 2 + 10)
   .attr("y1",getCoordinate("Pierre-Simon Laplace").y * height * dy + shifty + rectheight)
-  .attr("x2",getCoordinate("Siméon Denis Poisson").x * width * dx + shiftx + rectwidth / 2 - 10)
+  .attr("x2",getCoordinate("Siméon Denis Poisson").x * width * dx + shiftx + rectwidth / 2 + 10)
   .attr("y2",getCoordinate("Siméon Denis Poisson").y * height * dy + shifty)
   .attr("stroke", linecolor)
     .attr("stroke-width", linewidth)
