@@ -264,7 +264,8 @@ const zoom = d3.zoom()
 svg.call(zoom);
 
 // Set initial zoom transformation
-// const initialTransform = d3.zoomIdentity.translate(shiftx, shifty).scale(0.8);
+// const initialTransform = d3.zoomIdentity.scale(window.innerWidth/2400+0.2);
+// document.querySelector(".Nicolaus17").scrollIntoView()
 // svg.call(zoom).call(zoom.transform, initialTransform);
 
 function zoomed(event) {
