@@ -149,7 +149,7 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const mysvg = d3.select("body").append("svg").attr("width", 2400).attr("height", 3750);
+const mysvg = d3.select("#container").append("svg").attr("width", 2400).attr("height", 3750);
 const svg = mysvg.append("g")
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
