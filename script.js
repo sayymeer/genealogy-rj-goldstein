@@ -117,7 +117,7 @@ function getCoordinate(name) {
   return index !== -1 ? { x: position[index].x, y: position[index].y } : null;
 }
 
-const mysvg = d3.select("body").append("svg").attr("width", 2400).attr("height", 3600);
+const mysvg = d3.select("body").append("svg").attr("width", 2400).attr("height", 3700);
 const svg = mysvg.append("g")
 position.forEach(element => {
   createRectWithWrappedText(svg,element.x*width*dx + shiftx,element.y*height*dy + shifty,element.name,element.body,element.flag)
@@ -199,6 +199,15 @@ svg.append("line")
   .attr("stroke-width", linewidth)
   .attr("marker-end", "url(#arrow)");
 
+  svg.append("line")
+  .attr("x1",getCoordinate("Pierre-Simon Laplace").x * width * dx + shiftx + rectwidth / 2 - 10)
+  .attr("y1",getCoordinate("Pierre-Simon Laplace").y * height * dy + shifty + rectheight)
+  .attr("x2",getCoordinate("Siméon Denis Poisson").x * width * dx + shiftx + rectwidth / 2 - 10)
+  .attr("y2",getCoordinate("Siméon Denis Poisson").y * height * dy + shifty)
+  .attr("stroke", linecolor)
+    .attr("stroke-width", linewidth)
+    .attr("marker-end", "url(#arrow)");
+  
 
 //   const zoom = d3.zoom()
 //   .scaleExtent([0.6, 1]) 
