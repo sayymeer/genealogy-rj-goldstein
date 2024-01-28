@@ -88,6 +88,10 @@ header
     transform: scaleX(1);
 }
 
+ul{
+    font-size: small;
+}
+
 /* svg{
     background-color: aqua;
 } */

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. R. Goldstein</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header style="position: static;">
+        <a style="text-decoration: none; color:black;" href="/index.html"><h3 class="logo">Academic Lineage of R.J. Goldstein</h3></a>
+        <nav class="navbar">
+            <a href="reference.html">References</a>
+            <a href="contact.html">Contact Us</a> 
+        </nav>
+    </header>
+    <div class="form">
+        <form action="action_page.php">
+      
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="First name">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Last name">
+      
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Email address">
+      
+          <label for="Message">Message</label>
+          <textarea id="Message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <button type="button" onclick="sendEmail()">Submit</button>
+      
+        </form>
+      </div>
+      <style>
+        /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+button {
+  background-color: maroon;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color and some padding around the form */
+.form {
+    background-color: #cccccc62;
+  padding: 20px;
+}
+      </style>
+
+      <script>
+        function sendEmail() {
+      var emailAddress = 'umadanan@iitk.ac.in,jnshadi@sandia.gov';
+      var subject = "Regarding Genealogy Website of Prof R.J. Goldstein";
+      var body = `
+      First Name: ${document.querySelector("#fname").value}
+      Last Name: ${document.querySelector("#lname").value}
+      Email: ${document.querySelector("#email").value}
+      Message: ${document.querySelector("#Message").value}
+      `;
+
+      // Create the mailto link
+      var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+
+      // Open the default mail application
+      window.location.href = mailtoLink;
+    }
+      </script>
+</body>
+</html>

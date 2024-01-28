@@ -255,7 +255,31 @@ svg.append("line")
     .attr("x2",getCoordinate("Max Jakob").x * width * dx + shiftx + rectwidth / 2)
     .attr("y2",getCoordinate("Max Jakob").y * height * dy + shifty)
     .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty + rectheight)
+    .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
       .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5");
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").x * width * dx + shiftx + rectwidth / 2-20)
+    .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5");
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").x * width * dx + shiftx + rectwidth / 2-20)
+    .attr("y1",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").x * width * dx + shiftx + rectwidth / 2-20)
+    .attr("y2",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").y * height * dy + shifty)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
   
 
       svg.append("rect")
@@ -282,7 +306,7 @@ svg.append("line")
     .style("font-size", "13px")
     .style("padding","5px");
 
-    div.html("Founded Inst. of Technical Physics TMU <a href=''>[2]</a> <br>Hired Oscar Knoblauch as the first director")
+    div.html("Founded Inst. of Technical Physics TMU <a href='/reference.html'>[2]</a> <br>Hired Oscar Knoblauch as the first director")
 
 
 
