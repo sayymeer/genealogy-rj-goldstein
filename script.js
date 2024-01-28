@@ -77,7 +77,7 @@ function createRectWithWrappedText(svg, x, y, text,body,flag) {
 
 
   // Add the wrapped text
-  div.html(`<img src="./assets/${flag}.jpg" width="80" height:"${rectheight}" style="float:left;margin:3px;"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
+  div.html(`<img src="./assets/${flag}.jpg" width="80" height:"${rectheight}" style="float:left;margin:3px;"><h4 style="margin-bottom:0px; color: #800000;font-weight: bolder;margin-top:4px; font-size: 16px">${text}</h4><p style="margin-top:0px;font-style: italic;color: #800000; font-size: 13px">${body}</p>`);
   return
   }
   if(flag == 1){
@@ -239,9 +239,74 @@ svg.append("line")
   .attr("stroke", linecolor)
     .attr("stroke-width", linewidth)
     .attr("marker-end", "url(#arrow)");
+
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Max Jakob").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y2",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5");
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Max Jakob").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Max Jakob").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y2",getCoordinate("Max Jakob").y * height * dy + shifty)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5");
   
 
-//   const zoom = d3.zoom()
+      svg.append("rect")
+  .attr("width", rectwidth/1.3).attr("rx",rectradius)
+  .attr("height", rectheight/2).attr("ry",rectradius)
+  .attr("fill","none")
+  .attr("stroke", linecolor)
+  .attr("stroke-width", linewidth)
+  .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+10)
+  .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight+30);
+
+
+  const foreignObject = svg.append("foreignObject")
+    .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+10)
+    .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight+30)
+    .attr("width", rectwidth/1.3)
+    .attr("height", rectheight/2);
+  
+    const div = foreignObject.append("xhtml:section")
+    .style("width", rectwidth/1.3)
+    .style("height", rectheight/2)
+    .style("overflow", "hidden")
+    .style("text-align", "center")
+    .style("font-size", "13px")
+    .style("padding","5px");
+
+    div.html("Founded Inst. of Technical Physics TMU <a href=''>[2]</a> <br>Hired Oscar Knoblauch as the first director")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //   const zoom = d3.zoom()
 //   .scaleExtent([0.6, 1]) 
 //   .extent([[0,0],[2400,3600]])// Set the zoom scale limits (adjust as needed)
 //   .on("zoom",zoomed );
