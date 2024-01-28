@@ -310,24 +310,20 @@ svg.append("line")
 
 
 
+    // const footer = svg.append("foreignObject")
+    // .attr("x", getCoordinate("Richard Jay Goldstein").x*width*dx+shiftx)
+    // .attr("y", getCoordinate("Richard Jay Goldstein").y*height*dy+shifty)
+    // .attr("width", rectwidth)
+    // .attr("height", rectheight);
 
+    // const ff = footer.append("footer").style("width", rectwidth/1.3)
+    // .style("height", rectheight/2)
+    // .style("overflow", "hidden")
+    // .style("text-align", "center")
+    // .style("font-size", "13px")
+    // .style("padding","5px");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // ff.html('Developed by Sameer and Naman')
 
 
   //   const zoom = d3.zoom()
