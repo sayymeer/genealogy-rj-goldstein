@@ -280,6 +280,56 @@ svg.append("line")
     .attr("y2",getCoordinate("Oscar Carl Wilhelm Hermann Knoblauch").y * height * dy + shifty)
     .attr("stroke", linecolor)
       .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
+
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Gustav Anton Zeuner").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Gustav Anton Zeuner").y * height * dy + shifty + rectheight)
+    .attr("x2",getCoordinate("Gustav Anton Zeuner").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y2",getCoordinate("Gustav Anton Zeuner").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth);
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Gustav Anton Zeuner").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Gustav Anton Zeuner").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2-10)
+    .attr("y2",getCoordinate("Gustav Anton Zeuner").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth);
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2-10)
+    .attr("y1",getCoordinate("Gustav Anton Zeuner").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2-10)
+    .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
+
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Franz Reuleaux").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Franz Reuleaux").y * height * dy + shifty + rectheight)
+    .attr("x2",getCoordinate("Franz Reuleaux").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y2",getCoordinate("Franz Reuleaux").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth);
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Franz Reuleaux").x * width * dx + shiftx + rectwidth / 2)
+    .attr("y1",getCoordinate("Franz Reuleaux").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2+10)
+    .attr("y2",getCoordinate("Franz Reuleaux").y * height * dy + shifty + rectheight+20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth);
+
+      svg.append("line")
+    .attr("x1",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2+10)
+    .attr("y1",getCoordinate("Franz Reuleaux").y * height * dy + shifty + rectheight+20)
+    .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2+10)
+    .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
   
 
       svg.append("rect")
