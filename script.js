@@ -373,7 +373,7 @@ svg.append("line")
     // .style("font-size", "13px")
     // .style("padding","5px");
 
-    // ff.html('Developed by Sameer and Naman')
+    // ff.html('Developed by Sameer Yadav and Naman Jaiswal (IIT Kanpur)')
 
 
   //   const zoom = d3.zoom()
