@@ -32,8 +32,9 @@
           <button type="button" onclick="sendEmail()">Submit</button>
       
         </form>
+        <p>*We will endeavor to consider suggested edits/changes as time allows.</p>
       </div>
-    <footer style="font-size: smaller; position: fixed;bottom: 0;left: 50%;transform: translateX(-50%);"><center>Developed by Sameer Yadav and Naman Jaiswal (IIT Kanpur)</center></footer>
+    <footer style="font-size: smaller; position:absolute;bottom:0;left: 50%;transform: translateX(-50%);width: 100%;"><center>Developed by Sameer Yadav and Naman Jaiswal (IIT Kanpur)</center></footer>
 
       <style>
         /* Style inputs with type="text", select elements and textareas */
@@ -67,7 +68,7 @@ button {
 
       <script>
         function sendEmail() {
-      var emailAddress = 'umadanan@iitk.ac.in,jnshadi@sandia.gov';
+      var emailAddress = 'umadanan@iitk.ac.in';
       var subject = "Regarding Genealogy Website of Prof R.J. Goldstein";
       var body = `
       First Name: ${document.querySelector("#fname").value}
