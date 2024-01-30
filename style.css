@@ -92,6 +92,11 @@ ul{
     font-size: small;
 }
 
+footer{
+    background-color: #daa520;
+    padding: 2px;
+}
+
 /* svg{
     background-color: aqua;
 } */
