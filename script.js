@@ -356,7 +356,7 @@ svg.append("line")
     .style("font-size", "13px")
     .style("padding","5px");
 
-    div.html("Founded Inst. of Technical Physics TMU <a href='/reference.html'>[2]</a> <br>Hired Oscar Knoblauch as the first director")
+    div.html("Founded Inst. of Technical Physics TUM <a href='/reference.html'>[2]</a> <br>Hired Oscar Knoblauch as the first director")
 
 
 
