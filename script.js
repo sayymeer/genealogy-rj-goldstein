@@ -382,7 +382,7 @@ svg.append("line")
     .style("font-size", "13px")
     .style("padding","5px");
 
-    div1.html("Post Doctoral Student for Oscar Knoblauch <a href='/reference.html'>[3]</a>")
+    div1.html("Post-doctoral student of Oscar Knoblauch <a href='/reference.html'>[3]</a>")
 
 
 
