@@ -18,10 +18,10 @@
     height: 240px;
     object-fit: cover;
     display: block;
-    border-left: 2px solid maroon;
-    border-right: 2px solid maroon;
-    border-top: 2px solid maroon;
-    padding: 2px;
+    border-left: 3px solid maroon;
+    border-right: 3px solid maroon;
+    border-top: 3px solid maroon;
+    padding: 3px;
 }
 
 .card__content {
@@ -29,7 +29,16 @@
     font-size: 1em;
     padding: 1px;
     background: #fafafa;
-    border-left: 2px solid maroon;
-    border-right: 2px solid maroon;
-    border-bottom: 2px solid maroon;
+    border-left: 3px solid maroon;
+    border-right: 3px solid maroon;
+    border-bottom: 3px solid maroon;
+    transition: background-color 0.3s ease;
+}
+
+.card{
+    background-color: goldenrod;
+}
+
+.card__content:hover {
+    background-color: goldenrod; /* Change to your desired hover background color */
 }
