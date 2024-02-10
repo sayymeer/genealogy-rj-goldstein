@@ -30,7 +30,7 @@
           <label for="Message">Message</label>
           <textarea id="Message" name="Message" placeholder="Write something.." style="height:200px"></textarea>
       
-          <p>*We will endeavor to consider suggested edits/changes as time permits.</p>
+          <p>Suggestions and feedback are always welcome. We will do our best to implement these suggestions.</p>
           <button type="button" onclick="sendEmail()">Submit</button>
       
         </form>
@@ -75,6 +75,7 @@ button {
       <script>
         function sendEmail() {
       var emailAddress = 'umadanan@iitk.ac.in';
+      var emailAddress1 = 'jnshadi@sandia.gov';
       var subject = "Regarding Genealogy Website of Prof R.J. Goldstein";
       var body = `
       First Name: ${document.querySelector("#fname").value}
@@ -86,7 +87,8 @@ button {
       // Create the mailto link
       var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress) +
         '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
+        '&body=' + encodeURIComponent(body) +
+        '&to=' + encodeURIComponent(emailAddress1);
 
       // Open the default mail application
       window.location.href = mailtoLink;
