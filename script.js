@@ -337,7 +337,7 @@ svg.append("line")
   .attr("height", rectheight/2).attr("ry",rectradius)
   .attr("fill","none")
   .attr("stroke", linecolor)
-  .attr("stroke-width", linewidth)
+  .attr("stroke-width", linewidth+1)
   .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+10)
   .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight+30);
 
@@ -357,6 +357,32 @@ svg.append("line")
     .style("padding","5px");
 
     div.html("Founded Inst. of Technical Physics TUM <a href='/reference.html'>[2]</a> <br>Hired Oscar Knoblauch as the first director")
+
+    svg.append("rect")
+  .attr("width", rectwidth/2).attr("rx",rectradius)
+  .attr("height", rectheight/2).attr("ry",rectradius)
+  .attr("fill","none")
+  .attr("stroke", linecolor)
+  .attr("stroke-width", linewidth+1)
+  .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
+  .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5+30);
+
+
+  const foreignObject1 = svg.append("foreignObject")
+    .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
+    .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5+30)
+    .attr("width", rectwidth/2)
+    .attr("height", rectheight/2);
+  
+    const div1 = foreignObject1.append("xhtml:section")
+    .style("width", rectwidth/2)
+    .style("height", rectheight/2)
+    .style("overflow", "hidden")
+    .style("text-align", "center")
+    .style("font-size", "13px")
+    .style("padding","5px");
+
+    div1.html("Post Doctoral Student for Oscar Knoblauch <a href='/reference.html'>[3]</a>")
 
 
 
