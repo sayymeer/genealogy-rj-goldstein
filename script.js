@@ -2,7 +2,7 @@ const data = await d3.csv("data.csv");
 const position = await d3.json("position.json");
 
 const width = 1600;
-const height =695;
+const height = 695;
 const dx = 0.4
 const dy = 0.4
 const shiftx = width*0.6
