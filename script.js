@@ -231,6 +231,63 @@ svg.append("line")
   .attr("stroke-width", linewidth)
   .attr("marker-end", "url(#arrow)");
 
+// svg.append("line")
+// .attr("x1",getCoordinate("Johannes Kepler").x * width * dx + shiftx + rectwidth / 2 - 10)
+// .attr("y1",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight)
+// .attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2 - 10)
+// .attr("y2",getCoordinate("Willebrord (Snel van Royen) Snellius").y * height * dy + shifty)
+// .attr("stroke", linecolor)
+//   .attr("stroke-width", linewidth)
+//   .attr("marker-end", "url(#arrow)");
+
+svg.append("line")
+.attr("x1",getCoordinate("Johannes Kepler").x * width * dx + shiftx + rectwidth / 2)
+.attr("y1",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight)
+.attr("x2",getCoordinate("Johannes Kepler").x * width * dx + shiftx + rectwidth / 2)
+.attr("y2",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight+20)
+.attr("stroke", linecolor)
+.attr("stroke-width", linewidth);
+
+svg.append("line")
+.attr("x1",getCoordinate("Johannes Kepler").x * width * dx + shiftx + rectwidth / 2)
+.attr("y1",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight+20)
+.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2-10)
+.attr("y2",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight+20)
+.attr("stroke", linecolor)
+.attr("stroke-width", linewidth);
+
+svg.append("line")
+.attr("x1",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2-10)
+.attr("y1",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight+20)
+.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2-10)
+.attr("y2",getCoordinate("Willebrord (Snel van Royen) Snellius").y * height * dy + shifty)
+.attr("stroke", linecolor)
+.attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
+
+svg.append("line")
+.attr("x1",getCoordinate("Ludolph van Ceulen").x * width * dx + shiftx + rectwidth / 2)
+.attr("y1",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight)
+.attr("x2",getCoordinate("Ludolph van Ceulen").x * width * dx + shiftx + rectwidth / 2)
+.attr("y2",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
+.attr("stroke", linecolor)
+.attr("stroke-width", linewidth);
+
+svg.append("line")
+.attr("x1",getCoordinate("Ludolph van Ceulen").x * width * dx + shiftx + rectwidth / 2)
+.attr("y1",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
+.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2+10)
+.attr("y2",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
+.attr("stroke", linecolor)
+.attr("stroke-width", linewidth);
+
+svg.append("line")
+.attr("x1",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2+10)
+.attr("y1",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
+.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2+10)
+.attr("y2",getCoordinate("Willebrord (Snel van Royen) Snellius").y * height * dy + shifty)
+.attr("stroke", linecolor)
+.attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
+
   svg.append("line")
   .attr("x1",getCoordinate("Pierre-Simon Laplace").x * width * dx + shiftx + rectwidth / 2 + 10)
   .attr("y1",getCoordinate("Pierre-Simon Laplace").y * height * dy + shifty + rectheight)
@@ -329,6 +386,7 @@ svg.append("line")
     .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x * width * dx + shiftx + rectwidth / 2+10)
     .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y * height * dy + shifty)
     .attr("stroke", linecolor)
+
       .attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
   
 
