@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prof. R. Goldstein</title>
+    <title>Prof. Richard J. Goldstein</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="team.css">
 </head>
 <body>
-    <header style="position: static;">
-        <a style="text-decoration: none; color:black;" href="/index.html"><h3 class="logo">Academic Lineage of R.J. Goldstein</h3></a>
-        <nav class="navbar">
-            <a href="reference.html">References</a>
-            <a href="contact.html">Contact Us</a> 
-            <a href="team.html">Team</a>
-        </nav>
-    </header>
+  <header class="header1">
+    <h3 class="logo"><a href="index.html" style="text-decoration: none; color: black">Academic Lineage of Richard J. Goldstein</a></h3>
+    <div class="hamburger-menu" onclick="toggleNavbar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="navbar">
+        <a href="reference.html">References</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="team.html">Team</a>
+    </nav>
+</header>
+
     <div class="reference">
         <h3 style="margin-left: 16px;">About the Team</h3>
-    <div class="cards">
+    <!-- <div class="cards">
         <div class="card">
           <img class="card__image" src="assets/John.jpg" style="border-radius:0" alt="">
           <div class="card__content">
@@ -69,8 +75,21 @@
                   </p>
             </div>
           </div>
+      </div> -->
+      <div class="Member">
+        <div class="Member Image">
+          Img
+        </div>
+        <div class="Member content">
+          Img
+        </div>
       </div>
     </div>
     <footer style="width: 100%;font-size: smaller; padding: 12px; position: fixed;bottom: 0;left: 50%;transform: translateX(-50%);"><center>Concept by Dr. John N. Shadid (Sandia National Labs) and Dr. Umesh Madanan (IIT Kanpur)<br>Developed by Sameer Yadav and Naman Jaiswal (IIT Kanpur)</center></footer>
-</body>
+    <script>
+      function toggleNavbar() {
+          document.querySelector('.navbar').classList.toggle('show-menu');
+      }
+  </script>
+  </body>
 </html>

@@ -2,7 +2,7 @@ const data = await d3.csv("data.csv");
 const position = await d3.json("position.json");
 
 const width = 1600;
-const height = 695;
+const height = 600;
 const dx = 0.4
 const dy = 0.4
 const shiftx = width*0.6
@@ -241,61 +241,13 @@ svg.append("line")
 //   .attr("marker-end", "url(#arrow)");
 
 svg.append("line")
-.attr("x1",getCoordinate("Tycho (Tyge Ottesen) Brahe").x * width * dx + shiftx + rectwidth / 2)
-.attr("y1",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight)
-.attr("x2",getCoordinate("Tycho (Tyge Ottesen) Brahe").x * width * dx + shiftx + rectwidth / 2)
-.attr("y2",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight+20)
+.attr("x1",getCoordinate("Pierre-Simon Laplace").x * width * dx + shiftx + rectwidth / 2 - 10)
+.attr("y1",getCoordinate("Pierre-Simon Laplace").y * height * dy + shifty + rectheight)
+.attr("x2",getCoordinate("Siméon Denis Poisson").x * width * dx + shiftx + rectwidth / 2 - 10)
+.attr("y2",getCoordinate("Siméon Denis Poisson").y * height * dy + shifty)
 .attr("stroke", linecolor)
-.attr("stroke-width", linewidth);
-
-svg.append("line")
-.attr("x1",getCoordinate("Tycho (Tyge Ottesen) Brahe").x * width * dx + shiftx + rectwidth / 2)
-.attr("y1",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight+20)
-.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2-10)
-.attr("y2",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight+20)
-.attr("stroke", linecolor)
-.attr("stroke-width", linewidth);
-
-svg.append("line")
-.attr("x1",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2-10)
-.attr("y1",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight+20)
-.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2-10)
-.attr("y2",getCoordinate("Willebrord (Snel van Royen) Snellius").y * height * dy + shifty)
-.attr("stroke", linecolor)
-.attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
-
-svg.append("line")
-.attr("x1",getCoordinate("Ludolph van Ceulen").x * width * dx + shiftx + rectwidth / 2)
-.attr("y1",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight)
-.attr("x2",getCoordinate("Ludolph van Ceulen").x * width * dx + shiftx + rectwidth / 2)
-.attr("y2",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
-.attr("stroke", linecolor)
-.attr("stroke-width", linewidth);
-
-svg.append("line")
-.attr("x1",getCoordinate("Ludolph van Ceulen").x * width * dx + shiftx + rectwidth / 2)
-.attr("y1",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
-.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2+10)
-.attr("y2",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
-.attr("stroke", linecolor)
-.attr("stroke-width", linewidth);
-
-svg.append("line")
-.attr("x1",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2+10)
-.attr("y1",getCoordinate("Ludolph van Ceulen").y * height * dy + shifty + rectheight+20)
-.attr("x2",getCoordinate("Willebrord (Snel van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2+10)
-.attr("y2",getCoordinate("Willebrord (Snel van Royen) Snellius").y * height * dy + shifty)
-.attr("stroke", linecolor)
-.attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
-
-  svg.append("line")
-  .attr("x1",getCoordinate("Pierre-Simon Laplace").x * width * dx + shiftx + rectwidth / 2 - 10)
-  .attr("y1",getCoordinate("Pierre-Simon Laplace").y * height * dy + shifty + rectheight)
-  .attr("x2",getCoordinate("Siméon Denis Poisson").x * width * dx + shiftx + rectwidth / 2 - 10)
-  .attr("y2",getCoordinate("Siméon Denis Poisson").y * height * dy + shifty)
-  .attr("stroke", linecolor)
-    .attr("stroke-width", linewidth)
-    .attr("marker-end", "url(#arrow)");
+  .attr("stroke-width", linewidth)
+  .attr("marker-end", "url(#arrow)");
 
 
       svg.append("line")
@@ -423,12 +375,12 @@ svg.append("line")
   .attr("stroke", linecolor)
   .attr("stroke-width", linewidth+1)
   .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
-  .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5+30);
+  .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5);
 
 
   const foreignObject1 = svg.append("foreignObject")
     .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
-    .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5+30)
+    .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5)
     .attr("width", rectwidth/2)
     .attr("height", rectheight/2);
   

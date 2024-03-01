@@ -1,44 +1,19 @@
-.cards {
-    margin: 0 auto;
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-    grid-auto-rows: auto;
-    gap: 20px;
-    font-family: sans-serif;
-    padding-top: 30px;
+.MMember{
+    width: 75%;
 }
 
-.cards * {
-    box-sizing: border-box;
+.Member{
+    /* width: 75%; */
+    /* margin: auto; */
+    float: left;
+    padding: 15px;
 }
 
-.card__image {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    display: block;
-    border-left: 3px solid maroon;
-    border-right: 3px solid maroon;
-    border-top: 3px solid maroon;
-    padding: 3px;
+.Image{
+    width: 30%;
+
 }
 
-.card__content {
-    line-height: 1.5;
-    font-size: 1em;
-    padding: 1px;
-    background: #fafafa;
-    border-left: 3px solid maroon;
-    border-right: 3px solid maroon;
-    border-bottom: 3px solid maroon;
-    transition: background-color 0.3s ease;
-}
-
-.card{
-    background-color: goldenrod;
-}
-
-.card__content:hover {
-    background-color: goldenrod; /* Change to your desired hover background color */
+.content{
+    width: 60%;
 }
