@@ -284,15 +284,15 @@ svg.append("line")
       svg.append("line")
       .attr("x1",getCoordinate("Tycho (Tyge Ottesen) Brahe").x * width * dx + shiftx + rectwidth / 2 + 10)
       .attr("y1",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight + 10)
-      .attr("x2",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2)
+      .attr("x2",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2 - 10)
       .attr("y2",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight + 10)
       .attr("stroke", linecolor)
         .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5");
 
       svg.append("line")
-      .attr("x1",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2)
+      .attr("x1",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2 - 10)
       .attr("y1",getCoordinate("Tycho (Tyge Ottesen) Brahe").y * height * dy + shifty + rectheight+10)
-      .attr("x2",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2)
+      .attr("x2",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2 - 10)
       .attr("y2",getCoordinate("Willebrord (Snell van Royen) Snellius").y * height * dy + shifty)
       .attr("stroke", linecolor)
         .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
@@ -307,7 +307,7 @@ svg.append("line")
       svg.append("line")
       .attr("x1",getCoordinate("Johannes Kepler").x * width * dx + shiftx + rectwidth / 2 + 10)
       .attr("y1",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight + 10)
-      .attr("x2",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2)
+      .attr("x2",getCoordinate("Willebrord (Snell van Royen) Snellius").x * width * dx + shiftx + rectwidth / 2 - 10)
       .attr("y2",getCoordinate("Johannes Kepler").y * height * dy + shifty + rectheight + 10)
       .attr("stroke", linecolor)
         .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5");
@@ -395,6 +395,14 @@ svg.append("line")
     .attr("stroke", linecolor)
 
       .attr("stroke-width", linewidth).attr("marker-end", "url(#arrow)");
+
+      svg.append("line")
+      .attr("x1",getCoordinate("Gottfried Wilhelm Leibniz").x * width * dx + shiftx * 0.777+ rectwidth / 2)
+      .attr("y1",getCoordinate("Gottfried Wilhelm Leibniz").y * height * dy + shifty + rectheight + 10)
+      .attr("x2",getCoordinate("Gottfried Wilhelm Leibniz").x * width * dx + shiftx + rectwidth / 2)
+      .attr("y2",getCoordinate("Gottfried Wilhelm Leibniz").y * height * dy + shifty + rectheight + 10)
+    .attr("stroke", linecolor)
+    .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
   
 
     svg.append("rect")
@@ -456,12 +464,12 @@ svg.append("line")
   .attr("stroke", linecolor)
   .attr("stroke-width", linewidth+1)
   .attr("x", getCoordinate("Gottfried Wilhelm Leibniz").x*width*dx+shiftx - rectheight*1.5 - 65)
-  .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.5 + 30);
+  .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.6 + 30);
 
 
   const foreignObject2 = svg.append("foreignObject")
     .attr("x", getCoordinate("Gottfried Wilhelm Leibniz").x*width*dx+shiftx - rectheight*1.5 - 65)
-    .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.5 + 30)
+    .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.6 + 30)
     .attr("width", rectwidth/2)
     .attr("height", rectheight/2);
   
@@ -473,7 +481,33 @@ svg.append("line")
     .style("font-size", "13px")
     .style("padding","5px");
 
-    div2.html("personal correspondence and discussions on maths <a href='/reference.html'>[4]</a>")
+    div2.html("Personal correspondence and discussions on maths <a href='/reference.html'>[4]</a>")
+
+    svg.append("rect")
+  .attr("width", rectwidth/2).attr("rx",rectradius)
+  .attr("height", rectheight/3).attr("ry",rectradius)
+  .attr("fill","none")
+  .attr("stroke", linecolor)
+  .attr("stroke-width", linewidth+1)
+  .attr("x", getCoordinate("Johannes Kepler").x*width*dx+shiftx + rectheight*0.6 - 25)
+  .attr("y", getCoordinate("Johannes Kepler").y*height*dy+shifty+rectheight*0.7 + 60);
+
+
+  const foreignObject3 = svg.append("foreignObject")
+    .attr("x", getCoordinate("Johannes Kepler").x*width*dx+shiftx + rectheight*0.6 - 25)
+    .attr("y", getCoordinate("Johannes Kepler").y*height*dy+ shifty+ rectheight*0.7 + 60)
+    .attr("width", rectwidth/2)
+    .attr("height", rectheight/3);
+  
+    const div3 = foreignObject3.append("xhtml:section")
+    .style("width", rectwidth/2)
+    .style("height", rectheight/2)
+    .style("overflow", "hidden")
+    .style("text-align", "center")
+    .style("font-size", "13px")
+    .style("padding","5px");
+
+    div3.html("Worked in their lab <a href='/reference.html'>[4]</a>")
 
 
 
@@ -510,7 +544,7 @@ svg.append("line")
 
 
 const zoom = d3.zoom()
-  .scaleExtent([1, 1])
+  .scaleExtent([0.97, 1])
   .on("zoom", zoomed);
 
 svg.call(zoom);
