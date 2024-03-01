@@ -1,8 +1,7 @@
 /* Add styles specific to the team page */
 .Member {
     display: flex;
-    margin: 20px auto; /* Center the Member boxes on the page */
-    width: clamp(580px, 50vw, 300px); /* Limit the width of each member box */
+    margin: 20px auto; /* Center the Member boxes on the page */ /* Limit the width of each member box */
     height: 200px; /* Limit the height of each member box */
     border: 2px solid black; /* Add border for each member box */
     border-radius: 8px; /* Add border-radius for rounded corners */
@@ -43,4 +42,34 @@
 
 body {
     overflow-y: scroll !important; /* Add scroll for overflow content */
+}
+
+@media (max-width: 550px){
+    .Member{
+        width: 70vw;
+    }
+}
+@media (min-width: 550px){
+    .Member{
+        width: 500px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Member {
+        flex-direction: column; /* Change flex direction to column */
+        max-width: 80%; /* Allow member boxes to take full width */
+        height: 140vh;
+    }
+
+    .Member-Image,
+    .Member-Content {
+        flex: 1; /* Equal width for image and content */
+        margin-right: 0; /* Remove margin between image and content */
+    }
+
+    .Member-Image img {
+        width: 80%; /* Make image take full width */
+        border-radius: 5px 5px 0 0; /* Add border-radius to top corners only */
+    }
 }
