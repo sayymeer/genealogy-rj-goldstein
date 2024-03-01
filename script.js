@@ -429,7 +429,7 @@ svg.append("line")
 
 
 const zoom = d3.zoom()
-  .scaleExtent([0.5, 1])
+  .scaleExtent([1, 1])
   .on("zoom", zoomed);
 
 svg.call(zoom);

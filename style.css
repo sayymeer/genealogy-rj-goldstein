@@ -129,15 +129,9 @@ footer{
     background-color: #333; /* Adjust color as needed */
 }
 
-@media (max-width: 650px) {
-    footer{
-        display: none;
-    }
-}
-
-@media (max-width: 930px) {
+@media (max-width: 660px) {
     footer {
-        display: none;
+        font-size: 0.7em;
     }
 }
 
