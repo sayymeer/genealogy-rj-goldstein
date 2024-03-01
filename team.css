@@ -47,6 +47,7 @@ body {
 @media (max-width: 550px){
     .Member{
         width: 70vw;
+        height: 160px;
     }
 }
 @media (min-width: 550px){
@@ -55,17 +56,18 @@ body {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 440px) {
     .Member {
         flex-direction: column; /* Change flex direction to column */
         max-width: 80%; /* Allow member boxes to take full width */
-        height: 140vh;
+        height: fit-content;
     }
 
     .Member-Image,
     .Member-Content {
         flex: 1; /* Equal width for image and content */
         margin-right: 0; /* Remove margin between image and content */
+        padding: 8px;
     }
 
     .Member-Image img {
