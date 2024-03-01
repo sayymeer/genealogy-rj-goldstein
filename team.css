@@ -1,19 +1,46 @@
-.MMember{
-    width: 75%;
+/* Add styles specific to the team page */
+.Member {
+    display: flex;
+    margin: 20px auto; /* Center the Member boxes on the page */
+    width: clamp(650px, 50vw, 300px); /* Limit the width of each member box */
+    height: 200px; /* Limit the height of each member box */
+    border: 2px solid black; /* Add border for each member box */
+    border-radius: 8px; /* Add border-radius for rounded corners */
+    background-color: goldenrod;
 }
 
-.Member{
-    /* width: 75%; */
-    /* margin: auto; */
-    float: left;
-    padding: 15px;
+.Member-Image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    background-color: goldenrod;
+    border: maroon;
 }
 
-.Image{
-    width: 30%;
-
+.Member-Image img {
+    width: 95%; /* Adjust image width as needed */
+    height: 95%;
+    border-radius: 5px;
+    border: maroon;
 }
 
-.content{
-    width: 60%;
+.Member-Content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: goldenrod;
+    font-weight: 650;
+    color: rgb(44, 0, 0);
+}
+
+.Member-Content h4 {
+    margin-bottom: 10px;
+    text-align: center; /* Center the text in Member-Content */
+}
+
+body {
+    overflow-y: scroll !important; /* Add scroll for overflow content */
 }
