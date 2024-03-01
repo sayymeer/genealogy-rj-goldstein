@@ -431,57 +431,80 @@ svg.append("line")
 
     div.html("Founded Inst. of Technical Physics TUM <a href='/reference.html'>[2]</a> <br>Hired Oscar Knoblauch as the first director")
 
-    svg.append("rect")
-  .attr("width", rectwidth/2).attr("rx",rectradius)
-  .attr("height", rectheight/2).attr("ry",rectradius)
-  .attr("fill","none")
-  .attr("stroke", linecolor)
-  .attr("stroke-width", linewidth+1)
-  .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
-  .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5);
-
-
-  const foreignObject1 = svg.append("foreignObject")
-    .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
-    .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5)
-    .attr("width", rectwidth/2)
-    .attr("height", rectheight/2);
-  
-    const div1 = foreignObject1.append("xhtml:section")
-    .style("width", rectwidth/2)
-    .style("height", rectheight/2)
-    .style("overflow", "hidden")
-    .style("text-align", "center")
-    .style("font-size", "13px")
-    .style("padding","5px");
-
-    div1.html("Post-doctoral student of Oscar Knoblauch <a href='/reference.html'>[3]</a>")
-
-    svg.append("rect")
-  .attr("width", rectwidth/2).attr("rx",rectradius)
-  .attr("height", rectheight/2).attr("ry",rectradius)
-  .attr("fill","none")
-  .attr("stroke", linecolor)
-  .attr("stroke-width", linewidth+1)
-  .attr("x", getCoordinate("Gottfried Wilhelm Leibniz").x*width*dx+shiftx - rectheight*1.5 - 65)
-  .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.6 + 30);
-
-
-  const foreignObject2 = svg.append("foreignObject")
-    .attr("x", getCoordinate("Gottfried Wilhelm Leibniz").x*width*dx+shiftx - rectheight*1.5 - 65)
-    .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.6 + 30)
-    .attr("width", rectwidth/2)
-    .attr("height", rectheight/2);
-  
-    const div2 = foreignObject2.append("xhtml:section")
-    .style("width", rectwidth/2)
-    .style("height", rectheight/2)
-    .style("overflow", "hidden")
-    .style("text-align", "center")
-    .style("font-size", "13px")
-    .style("padding","5px");
-
-    div2.html("Personal correspondence and discussions on maths <a href='/reference.html'>[4]</a>")
+    svg.append("line")
+    .attr("x1",getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth+10)
+    .attr("y1",getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight+30)
+    .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth+10)
+    .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight + 20)
+    .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
+      
+      svg.append("rect")
+      .attr("width", rectwidth/2).attr("rx",rectradius)
+      .attr("height", rectheight/2).attr("ry",rectradius)
+      .attr("fill","none")
+      .attr("stroke", linecolor)
+      .attr("stroke-width", linewidth+1)
+      .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
+      .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5);
+      
+      
+      const foreignObject1 = svg.append("foreignObject")
+      .attr("x", getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth/2+45)
+      .attr("y", getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*2.5)
+      .attr("width", rectwidth/2)
+      .attr("height", rectheight/2);
+      
+      const div1 = foreignObject1.append("xhtml:section")
+      .style("width", rectwidth/2)
+      .style("height", rectheight/2)
+      .style("overflow", "hidden")
+      .style("text-align", "center")
+      .style("font-size", "13px")
+      .style("padding","5px");
+      
+      div1.html("Post-doctoral student of Oscar Knoblauch <a href='/reference.html'>[3]</a>")
+      
+      svg.append("line")
+      .attr("x1",getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth*0.75+45)
+      .attr("y1",getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*3)
+      .attr("x2",getCoordinate("Carl Paul Gottfried von Linde").x*width*dx+shiftx+rectwidth*0.75+45)
+      .attr("y2",getCoordinate("Carl Paul Gottfried von Linde").y*height*dy+shifty+rectheight*3 + 10)
+      .attr("stroke", linecolor)
+        .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
+        
+        svg.append("rect")
+        .attr("width", rectwidth/2).attr("rx",rectradius)
+        .attr("height", rectheight/2).attr("ry",rectradius)
+        .attr("fill","none")
+        .attr("stroke", linecolor)
+        .attr("stroke-width", linewidth+1)
+        .attr("x", getCoordinate("Gottfried Wilhelm Leibniz").x*width*dx+shiftx - rectheight*1.5 - 65)
+        .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.6 + 30);
+        
+        
+        const foreignObject2 = svg.append("foreignObject")
+        .attr("x", getCoordinate("Gottfried Wilhelm Leibniz").x*width*dx+shiftx - rectheight*1.5 - 65)
+        .attr("y", getCoordinate("Gottfried Wilhelm Leibniz").y*height*dy+shifty+rectheight*0.6 + 30)
+        .attr("width", rectwidth/2)
+        .attr("height", rectheight/2);
+        
+        const div2 = foreignObject2.append("xhtml:section")
+        .style("width", rectwidth/2)
+        .style("height", rectheight/2)
+        .style("overflow", "hidden")
+        .style("text-align", "center")
+        .style("font-size", "13px")
+        .style("padding","5px");
+        
+        div2.html("Personal correspondence and discussions on maths <a href='/reference.html'>[4]</a>")
+        svg.append("line")
+        .attr("x1",getCoordinate("Johannes Kepler").x*width*dx+shiftx + rectheight*2.5 - 25)
+        .attr("y1",getCoordinate("Johannes Kepler").y*height*dy+shifty+rectheight*0.7 + 60)
+        .attr("x2",getCoordinate("Johannes Kepler").x*width*dx+shiftx + rectheight*2.5 - 25)
+        .attr("y2",getCoordinate("Johannes Kepler").y*height*dy+shifty+rectheight*0.7 + 40)
+        .attr("stroke", linecolor)
+          .attr("stroke-width", linewidth).attr("stroke-dasharray", "5,5").attr("marker-end", "url(#arrow)");
 
     svg.append("rect")
   .attr("width", rectwidth/2).attr("rx",rectradius)
