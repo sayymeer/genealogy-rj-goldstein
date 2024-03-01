@@ -2,7 +2,7 @@
 .Member {
     display: flex;
     margin: 20px auto; /* Center the Member boxes on the page */
-    width: clamp(650px, 50vw, 300px); /* Limit the width of each member box */
+    width: clamp(580px, 50vw, 300px); /* Limit the width of each member box */
     height: 200px; /* Limit the height of each member box */
     border: 2px solid black; /* Add border for each member box */
     border-radius: 8px; /* Add border-radius for rounded corners */
